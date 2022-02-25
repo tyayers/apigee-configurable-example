@@ -1,0 +1,18 @@
+basepath: "/test"
+
+authentication:
+  jwt:
+    id: azure_jwt
+    audiences: ["api://c7ec33ef-cfa5-46a1-8871-a7b2d42c3380"]
+    issuer: "https://sts.windows.net/316ba0e4-ce9e-43ea-9086-5850f9d8609d/"
+    remote_jwks:
+      uri: "https://login.microsoftonline.com/common/discovery/v2.0/keys"
+      cache_duration: 600s
+    locations:
+    - header: Authorization
+      transformation:
+        template: "Bearer {token}"
+        substitution: "{token}"
+
+target:
+  uri: "https://storage.googleapis.com/bruno-hosting/test.json"
