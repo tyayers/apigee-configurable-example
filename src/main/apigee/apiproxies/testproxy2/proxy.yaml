@@ -1,0 +1,8 @@
+basepath: "/test2"
+
+consumer_authorization:  # API Key enforcement
+  locations:
+  - header: x-api-key
+
+target:
+  uri: "https://storage.googleapis.com/bruno-hosting/test.json"

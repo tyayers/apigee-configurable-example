@@ -1,0 +1,1 @@
+wrk -H "x-api-key: $APIKEY" -t40 -c400 -d30s -R4000 https://dev.api.apigee.cloud10x.net/test2
